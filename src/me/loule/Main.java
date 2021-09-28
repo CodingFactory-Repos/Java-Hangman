@@ -76,17 +76,17 @@ public class Main {
                 displayHangman(word, wordSplit, wordFound, faults);
 
                 // Check if the game is finished
-                 if (Arrays.asList(wordFound).contains(null)) {
+                if (Arrays.asList(wordFound).contains(null)) {
                     // If the game is not finished, we continue
-                    if(faults.length == 6) {
+                    if (faults.length == 6) {
                         System.out.println("🤔 Tu as perdu ! Le mot était " + word + " !");
                         break;
                     }
-                 } else {
+                } else {
                     // If the game is finished, we display the result
-                     System.out.println("🎉 Bravo, tu as gagné !");
-                     break;
-                 }
+                    System.out.println("🎉 Bravo, tu as gagné !");
+                    break;
+                }
             }
         }
     }
@@ -94,34 +94,34 @@ public class Main {
     // Display the hangman
     public static void displayHangman(String word, String[] wordSplit, String[] wordFound, String[] faults) {
         // Display the hangman
-        if(faults.length == 0) {
+        if (faults.length == 0) {
             System.out.println("+---+\n|   |\n    |\n    |\n    |\n    |\n=========");
-        } else if(faults.length == 1) {
+        } else if (faults.length == 1) {
             System.out.println("+---+\n|   |\nO   |\n    |\n    |\n    |\n=========");
-        } else if(faults.length == 2) {
+        } else if (faults.length == 2) {
             System.out.println("+---+\n|   |\nO   |\n|   |\n    |\n    |\n=========");
-        } else if(faults.length == 3) {
+        } else if (faults.length == 3) {
             System.out.println("+---+\n|   |\nO   |\n/|  |\n    |\n    |\n=========");
-        } else if(faults.length == 4) {
+        } else if (faults.length == 4) {
             System.out.println("+---+\n|   |\nO   |\n/|\\ |\n    |\n    |\n=========");
-        } else if(faults.length == 5) {
+        } else if (faults.length == 5) {
             System.out.println("+---+\n|   |\nO   |\n/|\\ |\n/   |\n    |\n=========");
-        } else if(faults.length == 6) {
+        } else if (faults.length == 6) {
             System.out.println("+---+\n|   |\nO   |\n/|\\ |\n/ \\ |\n    |\n=========");
         }
 
         // Display the word
         System.out.println(word.length());
-        for(int i = 0; i < word.length(); i++) {
+        for (int i = 0; i < word.length(); i++) {
             String wordWasFound = null;
 
-            for(int j = 0; j < word.length(); j++) {
-                if(wordSplit[i].equals(wordFound[j])) {
+            for (int j = 0; j < word.length(); j++) {
+                if (wordSplit[i].equals(wordFound[j])) {
                     wordWasFound = wordFound[j] + " ";
                 }
             }
 
-            if(wordWasFound == null) {
+            if (wordWasFound == null) {
                 System.out.print("_ ");
             } else {
                 System.out.print(wordWasFound);
